@@ -40,29 +40,31 @@ const doneListEl = document.getElementsByClassName("done-tasks")[0];
 const inputAddDoneEl = document.getElementById("add-done-tasks");
 
 
-// if(!JSON.parse(localStorage.getItem("tasks"))){
-//     localStorage.setItem("tasks" ,`{"todo": [],"in-progress": [],"done": []}` )
-// }
+if(!JSON.parse(localStorage.getItem("tasks"))){
+    let data ={
+        "todo": [],
+        "in-progress": [],
+        "done": []
+    }
 
-let data ={
-    "todo": [],
-    "in-progress": [],
-    "done": []
-};
+     localStorage.setItem("tasks" ,JSON.stringify(data) )
+}else{
+    localStorage.getItem("tasks")
+}
 
-
+let data=JSON.parse(localStorage.getItem("tasks"))
 function addTasksToLocal(target,newTask){
     if(target === toDoButtonEl){
-        data["todo"].push(newTask)
+        data["todo"].unshift(newTask)
         // tasks["todo"].push(newTask)
         localStorage.setItem("tasks",JSON.stringify(data))
     }
     if(target === inProgressElButtonEl){
-        data["in-progress"].push(newTask)
+        data["in-progress"].unshift(newTask)
         localStorage.setItem("tasks",JSON.stringify(data))
     }
     if(target === doneButtonEl){
-        data["done"].push(newTask)
+        data["done"].unshift(newTask)
         // tasks["done"].push(newTask)
         localStorage.setItem("tasks",JSON.stringify(data))
     }
@@ -146,6 +148,7 @@ function editTask (event)
 
     }
 }
+
 
 // alt 1 2 3
 document.addEventListener("mouseover", moveTask)
