@@ -270,6 +270,8 @@ function drop(ev) {
 
 async function save(){
     try{
+        console.log(JSON.stringify({"tasks":{data}}))
+        console.log((localStorage.tasks))
         document.getElementById("loader").setAttribute("class","lds-roller")
         const respone = await fetch("https://json-bins.herokuapp.com/bin/6150ea134e0e2c8361b7ddce",{
             headers:{
