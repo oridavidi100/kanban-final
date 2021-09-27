@@ -151,6 +151,7 @@ function editTask (event)
     }
 
 }
+
 function blurTask (buttonId,arrName,oldValue,newValue){
 
     if ((buttonId === "submit-add-to-do")||
