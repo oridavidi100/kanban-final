@@ -266,47 +266,47 @@ function drop(ev) {
  
                            
 
-// //Save&Load API functions
+//Save&Load API functions
 
-// async function save(){
-//     try{
-//         document.getElementById("loader").setAttribute("class","lds-roller")
-//         const respone = await fetch("https://json-bins.herokuapp.com/bin/6150ea134e0e2c8361b7ddce",{
-//             headers:{
-//                 Accept: "application/json", "Content-Type": "application/json"
-//             },
-//             method:"PUT",
-//             body : JSON.stringify({"tasks":{data}})
-//         })
-//         //const localdata = await respone.json();
-//         document.getElementById("loader").removeAttribute("class","lds-roller")
-//     }
-//     catch(error){
-//         alert("You had API problem")
-//     }
-// }
+async function save(){
+    try{
+        document.getElementById("loader").setAttribute("class","lds-roller")
+        const respone = await fetch("https://json-bins.herokuapp.com/bin/6150ea134e0e2c8361b7ddce",{
+            headers:{
+                Accept: "application/json", "Content-Type": "application/json"
+            },
+            method:"PUT",
+            body : JSON.stringify({"tasks":{data}})
+        })
+        //const localdata = await respone.json();
+        document.getElementById("loader").removeAttribute("class","lds-roller")
+    }
+    catch(error){
+        alert("You had API problem")
+    }
+}
 
-// async function load(){
-//     try{
-//         document.getElementById("loader").setAttribute("class","lds-roller")
-//         const respone = await fetch("https://json-bins.herokuapp.com/bin/6150ea134e0e2c8361b7ddce",{
-//         headers:{
-//             Accept: "application/json", "Content-Type": "application/json"
-//         },
-//         method:"GET",
-//     })
-//     const localData = await respone.json();
-//     if(JSON.stringify(localData.tasks.data)!==localStorage.tasks){
-//         clearData();
-//         localStorage.setItem("tasks",JSON.stringify(localData.tasks.data));
-//         printData();
-//         }
-//     document.getElementById("loader").removeAttribute("class","lds-roller")
-// }
-// catch(error){
-//     alert("You had API problem")
-// }
-// }
+async function load(){
+    try{
+        document.getElementById("loader").setAttribute("class","lds-roller")
+        const respone = await fetch("https://json-bins.herokuapp.com/bin/6150ea134e0e2c8361b7ddce",{
+        headers:{
+            Accept: "application/json", "Content-Type": "application/json"
+        },
+        method:"GET",
+    })
+    const localData = await respone.json();
+    if(JSON.stringify(localData.tasks.data)!==localStorage.tasks){
+        clearData();
+        localStorage.setItem("tasks",JSON.stringify(localData.tasks.data));
+        printData();
+        }
+    document.getElementById("loader").removeAttribute("class","lds-roller")
+}
+catch(error){
+    alert("You had API problem")
+}
+}
 
 
 function clearData(){
