@@ -151,7 +151,6 @@ function editTask (event)
     }
 
 }
-
 function blurTask (buttonId,arrName,oldValue,newValue){
 
     if ((buttonId === "submit-add-to-do")||
@@ -176,6 +175,8 @@ function switchTasks(e)
     specificLis=e.target;
     document.addEventListener("keydown",pressKeys)
 }
+
+
 function pressKeys(e)
 {
     const value=specificLis.textContent;
@@ -218,10 +219,6 @@ function pressKeys(e)
 
 
 
-
-
-
-
 //search 
 function searchSort() {
     let input = document.getElementById('search').value
@@ -246,7 +243,7 @@ searchbar.addEventListener("keyup",searchSort);
 function allowDrop(ev) {
     ev.preventDefault();
 }
-  
+
 function drag(ev) {
         ev.dataTransfer.setData("text", ev.target.id);
         let list=ev.target;
@@ -271,6 +268,8 @@ function drop(ev) {
 
 async function save(){
     try{
+        console.log(JSON.stringify({"tasks":{data}}))
+        console.log((localStorage.tasks))
         document.getElementById("loader").setAttribute("class","lds-roller")
         const respone = await fetch("https://json-bins.herokuapp.com/bin/6150ea134e0e2c8361b7ddce",{
             headers:{
@@ -309,7 +308,6 @@ catch(error){
 }
 }
 
-
 function clearData(){
     let listim= document.querySelectorAll(".task")
     for(let li of listim){
@@ -333,5 +331,3 @@ function pargraph(){
     else element.setAttribute("class","hide")
     console.log(element)
 }
-
-
