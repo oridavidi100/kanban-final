@@ -1,3 +1,5 @@
+import "./styles.css";
+
 const toDobuttel = document.getElementById(`submit-add-to-do`);
 const inProButtonel = document.getElementById("submit-add-in-progress");
 const doneButtonEl = document.getElementById("submit-add-done");
