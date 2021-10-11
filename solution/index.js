@@ -7,6 +7,7 @@ inProButtonel.addEventListener("click",addTaskToCorrectSection)
 doneButtonEl.addEventListener("click",addTaskToCorrectSection)
 
 
+
 // add a task to the correct section
 function addTaskToCorrectSection({target}) { 
     if (target === toDobuttel || 
