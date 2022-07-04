@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Tasks manager</title>
+</head>
+<body>
+    <header id="page-title">kanban</header>
+    <button onclick="pargraph()">info</button>
+    <p id="parg"><mark>this is your task manneger</mark><br><b>
+    how to work with the website <br>
+    1)you can search the task you want by typing the task  name in the search <br>
+    2)you can add new tasks and edit them <br>
+    3)even if you accedently exit the web dont worry! your tasks saved after every change
+    in your computer. <br>
+    4)if you want to open your tasks in another device, press save in the device you entered a tasks and press load in the other device. <br>
+    5)to switch betweem tasks place you need to put your mouse over the wanted task and  press alt+(1="to do",2="in progress",3="done")or you can 
+    drag the wanted tasks and drop her in the top of the wanted location. <br>
+    </p>
+    <input type="text" 
+           id="search" 
+           placeholder="Search tasks">
+    <main>
+    <section id="todo"><h2>to do </h2> 
+              <span id="todo" 
+                    class="drop" 
+                    ondrop="drop(event)" 
+                    ondragover="allowDrop(event)"><ul class="to-do-tasks"></ul></span> 
+               <input type="text" id="add-to-do-task">
+               <button id="submit-add-to-do">add task</button>
+    </section>
+    <section id="in-progress"><h2> in progrem task</h2> 
+            <span id="in-progress" 
+                   class="drop" 
+                   ondrop="drop(event)" 
+                   ondragover="allowDrop(event)"><ul class="in-progress-tasks"></ul></span>
+             <input type="text" id="add-in-progress-task">
+             <button id="submit-add-in-progress">add task</button>
+    </section>
+    <section id="done"><h2>done</h2>
+            <span id="done" 
+                  class="drop" 
+                  ondrop="drop(event)" 
+                  ondragover="allowDrop(event)"><ul class="done-tasks"></ul></span>
+            <input type="text" id="add-done-task">
+            <button id="submit-add-done">add task</button>
+    </section>
+    </main>
+    <button onclick="save()" id="save-btn">save</button>
+    <button onclick="load()" id="load-btn">load</button><br>
+    
+    <!-- loader -->
+    <div id="loader" class="loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</body>
+</html>
